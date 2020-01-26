@@ -1,0 +1,23 @@
+\section{1変数多項式の割り算とユークリッドの互除法}
+
+\subsection{1変数多項式の割り算}
+
+$K$を$\Q$または$\R$とおくとき，$K$係数の$x$を変数とする多項式の全体$K[x]$は
+整数環$\Z$に大変良く似た性質を持っている．そのことの，詳しい議論は
+第7章で行うが，ここでは多項式の割り算について簡単に述べておこう．
+
+\定理{3.15}
+2つの$K$（$=\Q$または$\R$）係数の多項式
+\begin{align*}
+	f(x)	&=	a_nx^n	+	a_{n-1}x^{n-1}	+	\cdots	+	a_1	x	+	a_0	\quad (a_n \ne 0)	\\
+	g(x)	&=	b_mx^m	+	b_{m-1}x^{m-1}	+	\cdots	+	b_1	x	+	b_0	\quad (b_m \ne 0)
+\end{align*}
+に対して
+\begin{equation}
+	f(x)=h(x)g(x)	+	r(x)	,	\quad	\deg	r	<	\deg	g
+\label{eq3x15}
+\end{equation}
+を満足する$K$係数の多項式$h(x),r(x)$がただ1つ存在する．$r(x)$を$f(x)$を
+$g(x)$で割った\textbf{余り（剰余）}という．
+
+\証明

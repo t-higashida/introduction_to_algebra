@@ -1,0 +1,90 @@
+\section{準同型とイデアル}
+
+\subsection{準同型}
+
+可換環$R_1$から可換環$R_2$への写像$\varphi:\R_1 \rightarrow \R_2$が
+\begin{align*}
+	\varphi ( a + b ) &=\varphi(a ) + \varphi(b), \quad a,b \in R_1,	\\
+	\varphi ( a b ) &=\varphi(a )\varphi(b)
+\end{align*}
+を満足するとき可換環の\textbf{準同型}という．とくに$\varphi$が単射であるとき$\varphi$を
+$R_1$から$R_2$の中への\textbf{同型写像}という．さらに$\varphi$が全単射であるとき$\varphi$は
+全射同型写像といい，$R_1$と$R_2$とは\textbf{同型}であるという．特に可換環$R$から自分自身への
+準同型を\textbf{自己準同型}（endomorphism）といい，$R$から$R$への全射同型を\textbf{自己同型}
+（automorphisim）という．$R$の自己準同型の全体を$\text{End}(R)$，自己同型全体を$\text{Aut}(R)$と記す．
+
+
+（中略）
+
+\補題{7.2}
+可換環の準同型$\varphi : R \rightarrow S$に対して$\varphi$の\textbf{核} $\Ker \varphi$を
+\[
+	\Ker \varphi = \{ a \in R \: | \: \varphi(a)=0 \}
+\]
+と定義すると，これは$R$のイデアルである．
+
+\証明
+$a,b	\in \Ker \varphi$であれば
+\[
+	\varphi (a+b) = \varphi(a) + \varphi(b) = 0 + 0 = 0
+\]
+となり，$a+b \in \Ker \varphi$であることが分かる．$R$に任意の元$r$と$a\in \Ker \varphi$に
+対して
+\[
+	\varphi(ra) = \varphi(r) \varphi(a) = \varphi(r) \cdots 0  = 0
+\]
+が成り立つので，$r a \in \Ker \varphi$である．したがって，$\Ker \varphi$は$R$のイデアルである．
+\■
+
+（中略）
+\pagebreak
+
+\定理{7.46}（可換環の準同型定理）
+可換環の準同型$\varphi : R \rightarrow S$に対して，写像
+\begin{alignat*}{5}
+	\overline{\varphi}	\:	:&\quad		R	/	\Ker \varphi	&	&	\to			S	\\		
+											\:	;&\quad		r	+	\Ker \varphi	&	&	\mapsto	\varphi(r)
+\end{alignat*}
+は可換環の中の同型写像である．このとき全射準同型写像$j$（自然な準同型）
+\begin{alignat*}{5}
+	j	\:	:&\quad		R	&	&	\to			R / \Ker \varphi	\\		
+		\:	;&\quad		a	&	&	\mapsto	\overline{a} = a + \Ker \varphi
+\end{alignat*}
+$\overline{\varphi}$との合成$\overline{\varphi} \circ j$は$\varphi$と一致する（図\ref{fig7x2}）．
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=6cm,height=5cm]{fig7x2.bmp}
+	\caption{}
+	\label{fig7x2}
+\end{figure}
+もし$\varphi$が全射であれば，$\overline{\varphi}$によって$R / \Ker \varphi$と$S$とは同型である．
+
+\証明
+
+$\overline{\varphi}$が写像としてきちんと定義できることをまず示そう．もし$r + \Ker \varphi 
+= s + \Ker \varphi$であれば，$r- s \in \Ker \varphi$である．したがって
+\[
+	0 = \varphi(r - s) = \varphi (r) - \varphi(s)
+\]
+となり$\varphi (r) = \varphi(s)$となる．このことから，$\overline{\varphi}$は
+写像として意味を持つことが分かる．また
+\begin{align*}
+	\overline{\varphi} (( a + \Ker \varphi) + (b+ \Ker \varphi))
+		&=	\overline{((a+b) + \Ker \varphi)} \\
+		&=	\varphi(a+b) = \varphi (a) + \varphi(b) 	\\
+		&=	\overline{\varphi} (a + \Ker \varphi) + \overline{\varphi} (b + \Ker \varphi),	\\
+	\overline{\varphi}((a + \Ker \varphi ) \cdot (b + \Ker \varphi)) 
+		&=	\overline{\varphi}(ab +	\Ker	\varphi)	\\
+		&=	\varphi(ab) = \varphi(a) \varphi(b)	\\
+		&= \overline{\varphi}(a + \Ker \varphi) \overline{\varphi}(b + \Ker \varphi)
+\end{align*}
+となり，$\overline{\varphi}$は可換環の準同型写像である．さらに$\overline{\varphi}(a + \Ker \varphi) = 0$
+であれば，$\varphi (a) =0$，したがって$a \in \Ker \varphi$となり，
+$a + \Ker \varphi = \Ker \varphi = \overline{0}$であることが分かる．すなわち
+$\Ker \overline{\varphi} = \{ \overline{0} \}$であり，
+$\overline{\varphi}$は中への同型写像であることが分かる．また，
+$(\overline{\varphi} \circ \j ) (a) = \overline{\varphi} ( j(a)) = \overline{\varphi}(a + \Ker \varphi)
+= \varphi (a) $が$R$のすべての元に対して成り立つので，$\overline{\varphi} \circ j = \varphi$であることが
+分かる．
+\■
